@@ -1,0 +1,30 @@
+CREATE DATABASE cadastrohibernate
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Portuguese_Brazil.1252'
+    LC_CTYPE = 'Portuguese_Brazil.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+    
+CREATE TABLE IF NOT EXISTS public.usuario
+(
+    id bigint NOT NULL,
+    cidade character varying(255) COLLATE pg_catalog."default",
+    email character varying(255) COLLATE pg_catalog."default",
+    nome character varying(255) COLLATE pg_catalog."default",
+    idade integer NOT NULL,
+    CONSTRAINT usuario_pkey PRIMARY KEY (id)
+)
+
+CREATE TABLE IF NOT EXISTS public.telefoneusuario
+(
+    id bigint NOT NULL,
+    numero character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    usuariotelefone_id bigint NOT NULL,
+    CONSTRAINT telefoneusuario_pkey PRIMARY KEY (id),
+    CONSTRAINT fk3ecjooub74o7rx0r148wdwgq9 FOREIGN KEY (usuariotelefone_id)
+        REFERENCES public.usuario (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
