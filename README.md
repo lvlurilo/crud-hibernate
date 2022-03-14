@@ -1,8 +1,8 @@
-#CRUD
+# CRUD
 
 Projeto de estudo para praticar o desenvolvimento de um CRUD utilizando Java e Hibernate.
 
-##Como funciona
+## Como funciona
 
 O projeto possui as classes Usuario e Telefone, onde Usuario possui relação de '1 - N' com Telefone.
 
