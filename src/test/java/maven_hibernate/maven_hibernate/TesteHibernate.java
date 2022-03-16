@@ -1,12 +1,8 @@
 package maven_hibernate.maven_hibernate;
 
-import java.util.ArrayList;
-
-import org.junit.Test;
-
 import java.util.List;
 
-import javax.persistence.Table;
+import org.junit.Test;
 
 import dao.GenericDAO;
 import model.TelefoneUsuario;
@@ -20,9 +16,9 @@ public class TesteHibernate {
 		GenericDAO<Usuario> genericDAO = new GenericDAO<Usuario>();
 		Usuario usuario = new Usuario();
 
-		usuario.setNome("");
-		usuario.setCidade("");
-		usuario.setEmail("");
+		usuario.setNome("teste");
+		usuario.setCidade("teste");
+		usuario.setEmail("teste");
 		usuario.setIdade(18);
 
 		genericDAO.create(usuario);
@@ -57,7 +53,7 @@ public class TesteHibernate {
 		GenericDAO<Usuario> genericDAO = new GenericDAO<Usuario>();
 		Usuario usuario = new Usuario();
 
-		usuario = genericDAO.read(1L, Usuario.class);
+		usuario = genericDAO.read(16L, Usuario.class);
 
 		usuario.setIdade(28);
 
@@ -73,7 +69,7 @@ public class TesteHibernate {
 		GenericDAO<Usuario> genericDAO = new GenericDAO<Usuario>();
 		Usuario usuario = new Usuario();
 
-		usuario = genericDAO.read(1L, Usuario.class);
+		usuario = genericDAO.read(16L, Usuario.class);
 
 		genericDAO.delete(usuario);
 
